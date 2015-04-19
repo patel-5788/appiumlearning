@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public abstract class TestConfig {
@@ -20,7 +21,7 @@ public abstract class TestConfig {
 		public static void setCapabilities(String device,String automation,String appPath){
 			//Log.info("setting capabilities");
 			try {
-				deleteAppData();
+				deleteAppData("clear com.sof.revise");
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -42,16 +43,25 @@ public abstract class TestConfig {
 				
 				//Log.info(" capabilities setting done");
 			}
+		
+		public static void setChromeCapabilities(String device) throws InterruptedException{
+			
+			try {
+				deleteAppData("com.android.chrome");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			capabilities.setCapability("deviceName", device);
+			capabilities.setCapability("platformName", "android");
+			capabilities.setCapability(CapabilityType.BROWSER_NAME,"chrome");
+		}
 	
-	public static AndroidDriver startAppium() throws MalformedURLException, InterruptedException{
-		//PropertyConfigurator.configure("Log4j.properties");
-		//Log.info("initializing appium with capabilities"+capabilities);
-		driver =  new AndroidDriver(new URL(gridurl), capabilities);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(10000L);
-		return driver;
-	}
-	public static AndroidDriver  startAppium(String runon,String deviceName, String apppath) throws MalformedURLException, InterruptedException{
+	
+	   public static AndroidDriver  startAppium(String runon,String deviceName, String apppath) throws InterruptedException, MalformedURLException{
 		
 		if(runon.equalsIgnoreCase("mobile1")){
 			//Log.info("starting appium node on :"+mobile_device_1);
@@ -79,12 +89,19 @@ public abstract class TestConfig {
 			setCapabilities(deviceName,"Appium",apppath);
 			//Log.info("started appium node on :"+"");
 		         }
+		
+		if(runon.equalsIgnoreCase("chrome")){
+			//Log.info("starting appium node on :"+"");
+			setChromeCapabilities(deviceName);
+			//Log.info("started appium node on :"+"");
+		         }
 		driver =  new AndroidDriver(new URL(gridurl), capabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		return driver;
 		
 	}
+	
 	//@AfterTest
 	public void quit(){
 		//Log.info("quiting appium " );
@@ -93,7 +110,7 @@ public abstract class TestConfig {
 	
 	
 	
-	public static void deleteAppData() throws InterruptedException, IOException{
+	public static void deleteAppData(String AppPkg) throws InterruptedException, IOException{
 	CommandPrompt cp = new CommandPrompt();
 	//AvailabelPorts ap = new AvailabelPorts();
 	
@@ -101,7 +118,7 @@ public abstract class TestConfig {
 	 * start appium with default arguments
 	 */
 	
-		cp.runCommand("adb shell pm clear com.sof.revise");
+		cp.runCommand("adb shell pm "+AppPkg);
 		Thread.sleep(5000);
 	}
 	

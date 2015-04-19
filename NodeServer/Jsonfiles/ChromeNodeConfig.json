@@ -1,0 +1,25 @@
+{
+    "capabilities":
+ [ 
+   { 
+     "browserName": "chrome",
+          "maxInstances": 1,
+          "platform":"ANDROID",
+          "deviceName":"TA933071OQ"
+		  }], 
+	
+    "configuration":
+   { 
+    "nodeTimeout":120, 
+    "port":4736, 
+    "hubPort":4444,
+	"proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url":"http://127.0.0.1:4736/wd/hub",
+	"hub": "12.0.0.1:4444/grid/register",
+    "hubHost":"127.0.0.1",
+    "registerCycle":10000,
+    "register":true,
+    "maxSession":1
+ } 
+   } 
+  

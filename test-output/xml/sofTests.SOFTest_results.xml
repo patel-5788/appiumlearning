@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="104.167">
+           time="111.551">
   <properties />
   
   
-            <testcase name="loginTest" time="104.167" classname="sofTests.SOFTest" />
+            <testcase name="loginTest" time="111.551" classname="sofTests.SOFTest" />
       
 </testsuite>
