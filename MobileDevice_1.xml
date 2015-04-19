@@ -21,7 +21,20 @@
 		</classes>
 	</test> -->
 	
-	<test name="Test Execution On Real Device">
+	
+	   <test name="Test Execution On Real Device">
+		<parameter name="deviceName" value="TA933071OQ"></parameter>
+		<parameter name="RunOn" value="chrome" />
+		<parameter name="deviceName" value="TA933071OQ"></parameter>
+		'
+		<parameter name="ApplicationPath"
+			value=""></parameter>
+		<classes>
+			<class name="webAppTests.ChromeTest" />
+		</classes>
+	</test>
+	 
+	 <!-- <test name="Test Execution On Real Device">
 		<parameter name="RunOn" value="mobile1" />
 		<parameter name="deviceName" value="TA933071OQ"></parameter>
 		'
@@ -30,7 +43,7 @@
 		<classes>
 			<class name="sofTests.SOFTest" />
 		</classes>
-	</test>
+	</test> -->
 	<!-- 
 	<test name="Test Execution On Radb">
 		<parameter name="RunOn" value="emulator-1" />

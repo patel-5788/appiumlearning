@@ -1,0 +1,1 @@
+appium -a 127.0.0.1 -p 4736 --bootstrap-port 4736 -U TA933071OQ --nodeconfig %~dp0jsonfiles\ChromeNodeConfig.json

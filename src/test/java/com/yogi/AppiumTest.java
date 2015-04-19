@@ -2,6 +2,7 @@ package com.yogi;
 
 import io.appium.java_client.android.AndroidDriver;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +20,7 @@ public class AppiumTest{
 	private HomePage homepage;
 	@Parameters({"RunOn","deviceName","ApplicationPath"})
 	@BeforeTest
-	public void init(String runon,String deviceName,String apppath) throws MalformedURLException, InterruptedException{
+	public void init(String runon,String deviceName,String apppath) throws InterruptedException, MalformedURLException{
 		driver=TestConfig.startAppium(runon,deviceName,apppath);
 		homepage= new HomePage(driver);
 		new MainPage(driver);
