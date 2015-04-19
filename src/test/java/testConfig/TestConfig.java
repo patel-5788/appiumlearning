@@ -15,11 +15,6 @@ public abstract class TestConfig {
 	
 	public static  AndroidDriver driver;
 	public static String gridurl="http://127.0.0.1:4444/wd/hub";
-	
-	/*public static String mobile_device_1="TA933071OQ";
-	public static String emulator1 = "emulator-5554";
-	public static String emulator2 = "emulator-5556";*/
-	//private static final Logger Log = Logger.getLogger(TestConfig.class);
 	private static  DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		public static void setCapabilities(String device,String automation,String appPath){
@@ -35,18 +30,14 @@ public abstract class TestConfig {
 			}
 				File app = new File(appPath); 
 				capabilities.setCapability("deviceName", device);
-				//capabilities.setCapability("udid", device);				
-				//capabilities.setCapability("automationName",automation);
-				//capabilities.setCapability("appium-version", "1.2.2");
 				capabilities.setCapability("platformName", "Android");
-				//capabilities.setCapability("platformVersion", "4.4.2");			
-			    capabilities.setCapability("app", app.getAbsolutePath());
+				capabilities.setCapability("app", app.getAbsolutePath());
 			    capabilities.setCapability("noReset", true);
 			    capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"true");
-			   // capabilities.setCapability(MobileCapabilityType.DEVICE_READY_TIMEOUT, "300");
+			    capabilities.setCapability(MobileCapabilityType.DEVICE_READY_TIMEOUT, "30");
 			    capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60");
-			    //capabilities.setCapability(MobileCapabilityType.LAUNCH_TIMEOUT, "300");
-			   // capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"");
+			    capabilities.setCapability(MobileCapabilityType.LAUNCH_TIMEOUT, "100");
+			    capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"");
 				capabilities.setCapability("setWebContentsDebuggingEnabled","true");
 				
 				//Log.info(" capabilities setting done");
