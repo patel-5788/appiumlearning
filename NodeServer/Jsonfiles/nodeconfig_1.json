@@ -1,0 +1,26 @@
+{
+    "capabilities":
+ [ 
+   { 
+     "browserName": "Android",
+          "version":"4.4",
+          "maxInstances": 1,
+          "platform":"ANDROID",
+          "deviceName":"emulator-5554"
+		  }], 
+	
+    "configuration":
+   { 
+    "nodeTimeout":120, 
+    "port":4723, 
+    "hubPort":4444,
+	"proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url":"http://127.0.0.1:4723/wd/hub",
+	"hub": "12.0.0.1:4444/grid/register",
+    "hubHost":"127.0.0.1",
+    "registerCycle":10000,
+    "register":true,
+    "maxSession":1
+ } 
+   } 
+  

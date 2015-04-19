@@ -1,0 +1,1 @@
+appium -a 127.0.0.1 -p 4731 --bootstrap-port 4732 -U E9AZCY045457 --nodeconfig D:\Appium\jsonFiles\nodeconfig_4.json

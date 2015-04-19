@@ -1,0 +1,40 @@
+<suite name="SmokeSuite" verbose="1" parallel="" thread-count="5">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+
+	<tests>
+		<test name="Test On Mobile Device 1">
+			<suite-files>
+				<suite-file path="MobileDevice_1.xml" />
+			</suite-files>
+		</test>
+
+		<test name="Test On Mobile Device 2">
+			<suite-files>
+				<suite-file path="MobileDevice_2.xml" />
+			</suite-files>
+		</test>
+
+		<!-- <test name="Emulator 1">
+			<suite-files>
+				<suite-file path="Emulator_1.xml" />
+			</suite-files>
+		</test>
+
+		<test name="Emulator 2">
+			<suite-files>
+				<suite-file path="Emulator_2.xml" />
+			</suite-files>
+		</test>
+
+		<test name="cloud">
+			<suite-files>
+				<suite-file path="CloudTest.xml" />
+			</suite-files>
+		</test> -->
+
+	</tests>
+</suite>

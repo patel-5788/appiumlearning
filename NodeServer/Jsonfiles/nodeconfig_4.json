@@ -1,0 +1,29 @@
+{
+    "capabilities":
+ [ 
+   { 
+     "browserName": "Android",
+          "version":"4.4",
+          "maxInstances": 3,
+          "platform":"ANDROID",
+		  "deviceName":"TA933071OQ"
+		  }], 
+	
+    "configuration":
+   { 
+    "nodeTimeout":120, 
+    "port":4731, 
+    "hubPort":4444,
+	"proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url":"http://172.27.12.66:4731/wd/hub",
+	"hub": "172.27.12.66:4444/grid/register",
+    "hubHost":"172.27.12.66",
+    "nodePolling":2000, 
+    "registerCycle":10000,
+    "register":true,
+    "cleanUpCycle":2000, 
+    "timeout":30000, 
+    "maxSession":1
+ } 
+   } 
+  

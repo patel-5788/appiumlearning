@@ -1,0 +1,1 @@
+appium -a 127.0.0.1 -p 4728 --bootstrap-port 4729 -U emulator-5556 --nodeconfig %~dp0jsonfiles\nodeconfig_2.json

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test Execution On Real Device"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="104.167">
+  <properties />
+  
+  
+            <testcase name="loginTest" time="104.167" classname="sofTests.SOFTest" />
+      
+</testsuite>
