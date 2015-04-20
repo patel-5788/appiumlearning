@@ -8,6 +8,7 @@ import nakriPages.NaukriFrontPage;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Configuration;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,6 @@ import testConfig.TestConfig;
 public class NaukriRegisterTest {
 	public AndroidDriver driver;
 	// TODO Auto-generated constructor stub
-
 
 	@Parameters({"RunOn","deviceName","ApplicationPath"})
 	@BeforeTest
