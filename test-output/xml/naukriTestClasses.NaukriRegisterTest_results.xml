@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="60.174">
+           time="66.367">
   <properties />
   
   
-            <testcase name="EditProfileTest" time="60.174" classname="naukriTestClasses.NaukriRegisterTest" />
+            <testcase name="EditProfileTest" time="66.367" classname="naukriTestClasses.NaukriRegisterTest" />
       
 </testsuite>

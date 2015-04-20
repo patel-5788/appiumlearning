@@ -10,29 +10,25 @@
 
 
 
-	<!-- <test name="Test Execution On Real Device">
-		<parameter name="RunOn" value="mobile1" />
-		<parameter name="DeviceName" value="TA933071OQ"></parameter>
-		'
+	<test name="Test Execution On Real Device">
+	 <parameter name="deviceName" value="TA933071OQ"></parameter>
+	 <parameter name="RunOn" value="mobile1" />
 		<parameter name="ApplicationPath"
 			value="D:\\Appium\\apkfiles\\naukriApp.appModules.login.apk"></parameter>
 		<classes>
 			<class name="naukriTestClasses.NaukriRegisterTest" />
 		</classes>
-	</test> -->
+	</test>
 	
-	
-	   <test name="Test Execution On Real Device">
+	   <!-- <test name="Test Execution On Real Device">
 		<parameter name="deviceName" value="TA933071OQ"></parameter>
-		<parameter name="RunOn" value="chrome" />
-		<parameter name="deviceName" value="TA933071OQ"></parameter>
-		'
+		<parameter name="RunOn" value="chrome" />		'
 		<parameter name="ApplicationPath"
 			value=""></parameter>
 		<classes>
 			<class name="webAppTests.ChromeTest" />
 		</classes>
-	</test>
+	</test> -->
 	 
 	 <!-- <test name="Test Execution On Real Device">
 		<parameter name="RunOn" value="mobile1" />
