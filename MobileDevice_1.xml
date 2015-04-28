@@ -10,7 +10,7 @@
 
 
 
-	<test name="Test Execution On Real Device">
+	<!-- <test name="Test Execution On Real Device">
 	 <parameter name="deviceName" value="TA933071OQ"></parameter>
 	 <parameter name="RunOn" value="mobile1" />
 		<parameter name="ApplicationPath"
@@ -18,7 +18,7 @@
 		<classes>
 			<class name="naukriTestClasses.NaukriRegisterTest" />
 		</classes>
-	</test>
+	</test> -->
 	
 	   <!-- <test name="Test Execution On Real Device">
 		<parameter name="deviceName" value="TA933071OQ"></parameter>
@@ -31,43 +31,39 @@
 	</test> -->
 	 
 	 <!-- <test name="Test Execution On Real Device">
-		<parameter name="RunOn" value="mobile1" />
+		
 		<parameter name="deviceName" value="TA933071OQ"></parameter>
+		<parameter name="RunOn" value="mobile1" />
 		'
 		<parameter name="ApplicationPath"
 			value="D:\\Appium\\apkfiles\\com.sof.revise.apk"></parameter>
 		<classes>
-			<class name="sofTests.SOFTest" />
+			<class name="naukriTestClasses.HybridAppTest" />
 		</classes>
 	</test> -->
-	<!-- 
-	<test name="Test Execution On Radb">
+	
+	<!-- <test name="Test Execution On emu">
+		
+		<parameter name="deviceName" value="emulator-5554"></parameter>
 		<parameter name="RunOn" value="emulator-1" />
-		<parameter name="DeviceName" value="emulator-5554"></parameter>
 		'
-		<parameter name="ApplicationPath"
-			value="D:\\Appium\\apkfiles\\naukriApp.appModules.login.apk"></parameter>
-		<classes>
-			<class name="naukriTestClasses.NaukriRegisterTest" />
-		</classes>
-	</test> -->
-	<!-- 
-	<test name="Test Execution On Emulator">
-		<parameter name="RunOn" value="emulator-1" />
-		<parameter name="DeviceName" value="emulator-5554"></parameter>
-		<parameter name="ApplicationPath" value=".\\testapp\\naukriApp.appModules.login.apk"></parameter>
 		<parameter name="ApplicationPath"
 			value="D:\\Appium\\apkfiles\\com.sof.revise.apk"></parameter>
 		<classes>
-			<class name="sofTests.SOFTest" />
+			<class name="naukriTestClasses.HybridAppTest" />
 		</classes>
 	</test> -->
+	 
+	<test name="Test Execution On Emulator23">
+	    <parameter name="deviceName" value="emulator-5554"></parameter>
+		<parameter name="RunOn" value="emulator-1" />
+		
+		 <parameter name="ApplicationPath" value=".\\testapp\\com.shaadi.android.apk"></parameter>
+		<!-- <parameter name="ApplicationPath"
+			value="D:\\Appium\\apkfiles\\naukriApp.appModules.login.apk"></parameter> -->
+		<classes>
+			<class name="naukriTestClasses.HybridAppTest" />
+		</classes>
+	</test>
 	
-	
-	<!-- <test name="Test Execution On Emulator"> <parameter name="RunOn" value="emulator-1" 
-		/> <parameter name="DeviceName" value="emulator-5554"></parameter> <parameter 
-		name="ApplicationPath" value="D:\\naukriApp.appModules.login.apk"></parameter> 
-		<classes> <class name="naukriTestClasses.NaukriRegisterTest" /> </classes> 
-		</test> -->
-
 </suite>

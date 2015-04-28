@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.CapabilityType;
@@ -20,7 +21,7 @@ public abstract class TestConfig {
 
 		public static void setCapabilities(String device,String automation,String appPath){
 			//Log.info("setting capabilities");
-			try {
+			/*try {
 				deleteAppData("clear com.sof.revise");
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -28,17 +29,26 @@ public abstract class TestConfig {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 				File app = new File(appPath); 
 				capabilities.setCapability("deviceName", device);
 				capabilities.setCapability("platformName", "Android");
 				capabilities.setCapability("app", app.getAbsolutePath());
 			    capabilities.setCapability("noReset", true);
+			    
+			    /*
+			     * Set pkg and activity when app already installed
+			     */
+			  
+			    //capabilities.setCapability(MobileCapabilityType.APP_PACKAGE,"com.shaadi.android");
+			   // capabilities.setCapability(MobileCapabilityType.APP_ACTIVITY,".MainActivity");
+			    		
+			    		
 			    capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"true");
 			    capabilities.setCapability(MobileCapabilityType.DEVICE_READY_TIMEOUT, "30");
-			    capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60");
-			    capabilities.setCapability(MobileCapabilityType.LAUNCH_TIMEOUT, "100");
-			    capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"");
+			   // capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60");
+			   // capabilities.setCapability(MobileCapabilityType.LAUNCH_TIMEOUT, "100");
+			  //  capabilities.setCapability(MobileCapabilityType.SUPPORTS_LOCATION_CONTEXT,"");
 				capabilities.setCapability("setWebContentsDebuggingEnabled","true");
 				
 				//Log.info(" capabilities setting done");
@@ -120,6 +130,16 @@ public abstract class TestConfig {
 	
 		cp.runCommand("adb shell pm "+AppPkg);
 		Thread.sleep(5000);
+	}
+	
+	public static void switchToWebView(){
+		Set<String> contextNames = driver.getContextHandles();
+          for (String contextName : contextNames) {
+          System.out.println("available view is "+contextName);
+          if (contextName.contains("WEBVIEW")){
+            driver.context(contextName);
+          }
+        }
 	}
 	
 
